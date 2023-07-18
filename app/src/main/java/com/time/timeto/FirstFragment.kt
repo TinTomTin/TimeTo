@@ -40,7 +40,7 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
         val titleTextView = view.findViewById<TextView>(R.id.textview_title)
-        titleTextView.text = "${plnTrip.name} : ${plnTrip.createdDate}"
+        titleTextView.text = "${plnTrip.name} : ${plnTrip.eventDate}"
         val hoursCount = view.findViewById<TextView>(R.id.textView_hours)
         hoursCount.text = "${plnTrip.timeUntil()} hours"
     }
