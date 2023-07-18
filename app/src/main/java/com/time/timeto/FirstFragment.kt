@@ -33,15 +33,16 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val eventDate = LocalDateTime.of(2023,8,9,13,30)
+        val eventDate = LocalDateTime.of(2023,8,8,13,0)
         val createdDate = LocalDateTime.of(2023,7,18,22,19)
         val plnTrip = TimeToEvent("Poland Trip", "HH", eventDate, createdDate)
-        val heading = plnTrip.timeUntil()
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
         val titleTextView = view.findViewById<TextView>(R.id.textview_title)
-        titleTextView.text = plnTrip.name
+        titleTextView.text = "${plnTrip.name} : ${plnTrip.createdDate}"
+        val hoursCount = view.findViewById<TextView>(R.id.textView_hours)
+        hoursCount.text = "${plnTrip.timeUntil()} hours"
     }
 
     override fun onDestroyView() {
