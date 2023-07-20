@@ -1,5 +1,6 @@
 package com.time.timeto
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -44,6 +45,11 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
+            R.id.action_add -> {
+                val addEvent = Intent(this, TimeToEventActivity::class.java)
+                startActivity(addEvent)
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

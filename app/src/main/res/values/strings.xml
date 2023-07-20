@@ -6,6 +6,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="menu_add">Add Event</string>
+    <string name="label_event_name">Event Name</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet,
