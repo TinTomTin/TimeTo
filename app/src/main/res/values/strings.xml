@@ -8,7 +8,10 @@
     <string name="previous">Previous</string>
     <string name="menu_add">Add Event</string>
     <string name="label_event_name">Event Name</string>
-
+    <string name="label_event_date">Event Date</string>
+    <string name="label_event_time">Event Time</string>
+    <string name="label_event_format">Event Format</string>
+    <string name="label_button_Save">Save</string>
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet,
     </string>
