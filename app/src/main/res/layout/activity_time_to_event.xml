@@ -8,78 +8,78 @@
     tools:context=".TimeToEventActivity" >
 
     <TextView
-        android:id="@+id/eventNameLabel"
+        android:id="@+id/labelNewEvent"
+        style="@android:style/Widget.Holo.TextView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10sp"
         android:fontFamily="sans-serif"
-        android:text="@string/label_event_name"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
+        android:text="@string/label_event"
+        android:textAlignment="center"
+        android:textSize="32sp"
         android:textStyle="bold" />
 
 
     <EditText
         android:id="@+id/input_eventName"
-        style="@style/Widget.Material3.TextInputEditText.FilledBox"
+        style="@android:style/Widget.Holo.EditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:ems="10"
+        android:hint="@string/label_event_name"
         android:inputType="text"
-        android:text="Name" />
-
-    <TextView
-        android:id="@+id/eventDateLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="@string/label_event_date"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/input_eventDate"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="date" />
-
-    <TextView
-        android:id="@+id/eventTimeLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="@string/label_event_time"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/input_eventTime"
-        style="@android:style/Widget.Holo.Light.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="time" />
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button_save"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_button_Save" />
-
-        <Button
-            android:id="@+id/button3"
+            android:id="@+id/button_setDate"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/label_event_date"
+            android:textSize="20sp" />
 
+        <EditText
+            android:id="@+id/editText_EventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_SetTime"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_event_time"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editText_EventTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="time" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_Save" />
 
 </LinearLayout>

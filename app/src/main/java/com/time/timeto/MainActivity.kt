@@ -2,6 +2,7 @@ package com.time.timeto
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -11,12 +12,14 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import com.time.timeto.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private var TAG: String = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -47,10 +50,19 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             R.id.action_add -> {
                 val addEvent = Intent(this, TimeToEventActivity::class.java)
-                startActivity(addEvent)
+                startActivityForResult(addEvent, 1)
                 return true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.d(TAG, "in main activity handler")
+        if (resultCode == RESULT_OK) {
+            val lbl = findViewById<TextView>(R.id.textview_title)
+            lbl.text = data!!.getStringExtra("eventDate")
         }
     }
 
